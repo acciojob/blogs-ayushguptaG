@@ -23,8 +23,7 @@ public class Blog{
     private String title;
     private String content;
     @CreationTimestamp
-    @Temporal(value= TemporalType.TIMESTAMP)
-    private Date createdOn;
+    private Date pubDate;
 
     @ManyToOne
     @JoinColumn
@@ -36,7 +35,7 @@ public class Blog{
     public Blog(String title, String content, Date published) {
         this.title = title;
         this.content = content;
-        this.createdOn= published;
+        this.pubDate= published;
     }
 
     public Blog() {
@@ -78,15 +77,15 @@ public class Blog{
         return id;
     }
 
-    public Date getUpdatedOn() {
-        return createdOn;
+    public Date getPubDate() {
+        return pubDate;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
+    public void setPubDate(Date newDate) {
+        this.pubDate = newDate;
     }
 }
