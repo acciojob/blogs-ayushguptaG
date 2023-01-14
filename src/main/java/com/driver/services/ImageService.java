@@ -17,11 +17,12 @@ public class ImageService {
 
     public Image createAndReturn(Blog blog, String description, String dimensions){
         //create an image based on given parameters and add it to the imageList of given blog
-        Image newImage= new Image(description, dimensions, blog);
+        Image newImage= new Image(description, dimensions);
 
         List<Image> imageList= blog.getImageList();
 
         imageList.add(newImage);
+        newImage.setBlog(blog);
         blog.setImageList(imageList);
 
         blogRepository9.save(blog);

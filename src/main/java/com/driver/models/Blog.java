@@ -33,11 +33,13 @@ public class Blog{
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
     private List<Image> imageList;
 
-    public Blog(String title, String content) {
+    public Blog(String title, String content, Date published) {
         this.title = title;
         this.content = content;
-        createdOn= new Date();
-        this.imageList= new ArrayList<>();
+        this.createdOn= published;
+    }
+
+    public Blog() {
     }
 
     public String getTitle() {
@@ -78,5 +80,13 @@ public class Blog{
 
     public Date getUpdatedOn() {
         return createdOn;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 }

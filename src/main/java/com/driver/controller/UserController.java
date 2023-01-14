@@ -16,8 +16,8 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<Void> createUser(@RequestBody UserRequestDto userRequestDto) {
-        userService.createUser(userRequestDto);
+    public ResponseEntity<Void> createUser(@RequestBody User user) {
+        userService.createUser(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -28,8 +28,8 @@ public class UserController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Void> updateUser(@RequestBody UserRequestDto userRequestDto) {
-        userService.updateUser(userRequestDto);
+    public ResponseEntity<Void> updateUser(@RequestBody User user) {
+        userService.updateUser(user);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

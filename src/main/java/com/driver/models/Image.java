@@ -17,10 +17,12 @@ public class Image{
     @JoinColumn
     private Blog blog;
 
-    public Image(String description, String dimensions, Blog blog) {
+    public Image(String description, String dimensions) {
         this.description = description;
         this.dimensions = dimensions;
-        this.blog = blog;
+    }
+
+    public Image() {
     }
 
     public String getDescription() {
@@ -49,5 +51,9 @@ public class Image{
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

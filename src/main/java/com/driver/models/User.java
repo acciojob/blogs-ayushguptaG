@@ -24,8 +24,8 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.blogList= new ArrayList<>();
     }
+    public User(){};
 
     public String getUsername() {
         return username;
@@ -69,5 +69,9 @@ public class User {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

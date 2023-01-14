@@ -18,9 +18,7 @@ public class UserService {
     @Autowired
     BlogService blogService3;
 
-    public void createUser(UserRequestDto userRequestDto){
-
-        User user= UserConverter.convertDtoToEntity(userRequestDto);
+    public void createUser(User user){
 
         userRepository3.save(user);
 
@@ -30,17 +28,9 @@ public class UserService {
         userRepository3.deleteById(userId);
     }
 
-    public void updateUser(UserRequestDto userRequestDto){
+    public void updateUser(User user){
 
-        String userName= userRequestDto.getUsername();
-        User updateUser= userRepository3.findByUsername(userName);
-
-        updateUser.setFirstName(userRequestDto.getFirstName());
-        updateUser.setLastName(userRequestDto.getLastName());
-        updateUser.setUsername(userRequestDto.getUsername());
-        updateUser.setPassword(userRequestDto.getPassword());
-
-        userRepository3.save(updateUser);
+        userRepository3.save(user);
 
     }
 

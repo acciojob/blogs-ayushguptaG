@@ -35,7 +35,7 @@ public class BlogService {
         //create a blog at the current time
         //updating the blog details
         //Updating the userInformation and changing its blogs
-        Blog newBlog= new Blog(title, content);
+        Blog newBlog= new Blog(title, content, new Date());
 
         User user = userRepository1.findById(userId).get();
         List<Blog> blogList= user.getBlogList();
@@ -56,7 +56,7 @@ public class BlogService {
         //add an image to the blog after creating it
 
         Blog blog= blogRepository1.findById(blogId).get();
-        Image newImage= new Image(description,dimensions,blog);
+        Image newImage= new Image(description,dimensions);
 
         List<Image> imageList= blog.getImageList();
         imageList.add(newImage);
