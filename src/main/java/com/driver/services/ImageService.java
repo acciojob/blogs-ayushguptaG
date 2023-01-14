@@ -47,15 +47,15 @@ public class ImageService {
         String size= image.getDimensions();
 
         int imageArea= findArea(size);
-        int screeArea= findArea(screenDimensions);
+        int screenArea= findArea(screenDimensions);
 
-        int requiredImages= screeArea/imageArea;
+        int requiredImages= screenArea/imageArea;
         return requiredImages;
 
     }
     public int findArea(String size){
-        int length= Integer.valueOf(size.charAt(0));
-        int breadth= Integer.valueOf(size.charAt(0));
+        int length= (int)(size.charAt(0)-'0');
+        int breadth= (int)(size.charAt(2)-'0');
 
         int Area= length*breadth;
         return Area;
